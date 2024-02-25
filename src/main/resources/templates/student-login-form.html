@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+	<title>Login to Enter!</title>
+</head>
+
+<!-- Content section -->
+
+<body layout:fragment="content" class="d-flex flex-column h-100">
+	<br>
+	<div class="container">
+		<form role="form" method="post" th:action="@{/students/login}" th:object="${student}">
+			<div class="form-group row">
+				<label for="userName" class="col-sm-2 col-form-label">User Name</label>
+				<div class="col-sm-10">
+					<input name="userName" th:field="*{userName}" type="text" class="form-control" id="userName"
+						placeholder="userName...">
+				</div>
+			</div>
+			<br>
+
+			<br>
+			<div class="form-group row">
+				<label for="password" class="col-sm-2 col-form-label">Password</label>
+				<div class="col-sm-10">
+					<input name="password" th:field="*{password}" type="text" class="form-control" id="password"
+						placeholder="password...">
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<div class="col-sm-10">
+					<button type="submit" class="btn btn-primary">Login Here</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+	<title>List of all students</title>
+	<style>
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		.animated-text {
+			animation: fadeIn 1s ease-in-out forwards;
+		}
+	</style>
+</head>
+
+<!-- Content section -->
+
+<body layout:fragment="content" class="d-flex flex-column h-100">
+	<br>
+	<div class="container">
+		<div class="container">
+			<h1 class="animated-text" style="text-align: center; font-size: 2em; color: #336699;">You have to autheticate first to access anything on this page</h1>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+	<title>Register Here!</title>
+</head>
+
+<!-- Content section -->
+
+<body layout:fragment="content" class="d-flex flex-column h-100">
+	<br>
+	<div class="container">
+		<form role="form" method="post" th:action="@{/students/register}" th:object="${student}">
+
+			<br>
+			<div class="form-group row">
+				<label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+				<div class="col-sm-10">
+					<input name="firstName" th:field="*{firstname}" type="text" class="form-control" id="firstName"
+						placeholder="Enter First Name...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">
+						First name is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+				<div class="col-sm-10">
+					<input name="lastName" th:field="*{lastname}" type="text" class="form-control" id="lastName"
+						placeholder="Enter Last Name...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Last
+						name is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="userName" class="col-sm-2 col-form-label">User Name</label>
+				<div class="col-sm-10">
+					<input name="userName" th:field="*{userName}" type="text" class="form-control" id="userName"
+						placeholder="Enter User Name...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}">User
+						name is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="password" class="col-sm-2 col-form-label">Password</label>
+				<div class="col-sm-10">
+					<input name="password" th:field="*{password}" type="password" class="form-control" id="password"
+						placeholder="Enter Password...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">
+						Password is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="address" class="col-sm-2 col-form-label">Address</label>
+				<div class="col-sm-10">
+					<input name="address" th:field="*{address}" type="text" class="form-control" id="address"
+						placeholder="Enter Address...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address
+						is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="city" class="col-sm-2 col-form-label">City</label>
+				<div class="col-sm-10">
+					<input name="city" th:field="*{city}" type="text" class="form-control" id="city"
+						placeholder="Enter City...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('city')}" th:errors="*{city}">City is
+						required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<label for="postal_code" class="col-sm-2 col-form-label">Postal Code</label>
+				<div class="col-sm-10">
+					<input name="postal_code" th:field="*{postal_code}" type="text" class="form-control"
+						id="postal_code" placeholder="Enter Postal Code...">
+					<div class="invalid-feedback" th:if="${#fields.hasErrors('postal_code')}"
+						th:errors="*{postal_code}">Postal code is required</div>
+				</div>
+			</div>
+			<br>
+			<div class="form-group row">
+				<div class="col-sm-10">
+					<button type="submit" class="btn btn-primary">Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+
+</html>

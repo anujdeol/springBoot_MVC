@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout.html">
+
+<head>
+	<title>List of all students</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.modal-content {
+			background-color: rgb(70, 224, 59);
+			border-color: rgb(8, 2, 3);
+			color: rgb(71, 104, 75);
+		}
+	</style>
+</head>
+
+<!-- Content section -->
+
+<body layout:fragment="content" class="d-flex flex-column h-100">
+	<br>
+	<div class="container">
+		<h1>Payment Page</h1>
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<form id="paymentForm">
+					<div class="mb-3">
+						<label for="cardNumber" class="form-label">Credit Card Number</label>
+						<input type="text" class="form-control" id="cardNumber" placeholder="Enter card number"
+							required>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="mb-3">
+								<label for="expiryDate" class="form-label">Expiry Date</label>
+								<input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="mb-3">
+								<label for="cvv" class="form-label">CVV</label>
+								<input type="password" class="form-control" id="cvv" placeholder="Enter CVV" required>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Checkout</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Success Modal -->
+	<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="successModalLabel">Success!</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Successfully registered, happy learnings!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+	<script>
+		document.getElementById('paymentForm').addEventListener('submit', function (event) {
+			event.preventDefault(); // Prevent form submission
+			var successModal = new bootstrap.Modal(document.getElementById('successModal')); // Create a new modal object
+			successModal.show(); // Show the modal
+		});
+	</script>
+</body>
+
+</html>
